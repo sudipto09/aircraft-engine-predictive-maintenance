@@ -8,24 +8,36 @@ The goal is to estimate how many operational cycles remain before engine failure
 Predictive maintenance is widely used by:
 
 Aircraft manufacturers (e.g. engine OEMs)
+
 Airlines and MROs (Maintenance, Repair, Overhaul)
+
 Safety-critical monitoring systems
 
 Accurate RUL prediction helps:
+
 Reduce unscheduled maintenance
+
 Improve fleet availability
+
 Enhance operational safety
+
 Lower lifecycle costs
 
 # Dataset
 NASA CMAPSS Turbofan Engine Dataset (FD001)
+
 ->Simulated degradation of turbofan engines
+
 ->Multivariate time-series sensor data
+
 ->Each engine runs until failure
+
 ->Target: Remaining Useful Life (RUL)
 
 Important preprocessing detail:
+
 The CMAPSS data files are whitespace-delimited, not single-space delimited.
+
 Correct parsing is done using:
 
 pd.read_csv(..., delim_whitespace=True)
@@ -50,26 +62,39 @@ Time-series structure
 
 #  Methodology
 Data Preparation:
+
 Correct CMAPSS parsing (delim_whitespace=True)
+
 RUL computation from final engine cycle
+
 RUL capping (optional, industry standard)
 
 Validation Strategy:
+
 Engine-wise train/validation split
+
 No overlap of engines between sets
+
 Prevents temporal and entity leakage
 
 Feature Selection:
+
 Selected informative sensors based on CMAPSS literature
+
 Removed constant / non-informative signals
 
 Missing Data Handling:
+
 Mean imputation using SimpleImputer
+
 Imputer fitted only on training data
 
 Models:
+
 Dummy Regressor (sanity check)
+
 Linear Regression (baseline)
+
 Random Forest Regressor (nonlinear model)
 
 # Results
@@ -96,14 +121,21 @@ Model reliability
 
 # Tech Stack
 Python
+
 Pandas, NumPy
+
 scikit-learn
+
 Matplotlib
+
 Jupyter Notebook
 
 # Learning Outcomes
 
 Correct handling of time-series entity data
+
 Detection and prevention of silent data leakage
+
 Industry-grade validation practices
+
 Practical aerospace ML pipeline design
