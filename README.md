@@ -87,6 +87,7 @@ Predicted vs True RUL plots are saved in:
 results/figures/
 
 These plots help visually assess:
+
 Bias near end-of-life
 
 Prediction spread
