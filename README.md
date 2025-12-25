@@ -91,7 +91,7 @@ Imputer fitted only on training data
 
 Models:
 
-Dummy Regressor (sanity check)
+Dummy Regressor 
 
 Linear Regression (baseline)
 
