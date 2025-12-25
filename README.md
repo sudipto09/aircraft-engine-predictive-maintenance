@@ -58,7 +58,7 @@ Missing sensor values
 → Mean imputation fitted only on training data
 
 Time-series structure
-→ Rolling window features (optional extension)
+→ Rolling window features 
 
 #  Methodology
 Data Preparation:
